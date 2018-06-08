@@ -31,3 +31,21 @@ public:
         return ans;
     }
 };
+
+class Solution2 {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        if (head == NULL)
+            return NULL;
+        ListNode** cur = &head;
+        ListNode* a = NULL;
+        ListNode* b = NULL;
+        while ((a = *cur) && (b = a->next)) {
+            a->next = b->next;
+            b->next = a;
+            *cur = b;
+            cur = &(a->next);
+        }
+        return head;
+    }
+};
