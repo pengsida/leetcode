@@ -47,8 +47,6 @@ private:
             ans.push_back(path);
             return;
         }
-        if (i == n)
-            return;
         for (int j = 0; j < n; j++) {
             if (visit[i][j])
                 continue;
