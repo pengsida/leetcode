@@ -28,10 +28,6 @@ public:
         }
         if (add == 0)
             return a;
-        if (m < 0) {
-            a.insert(a.begin(), '1');
-            return a;
-        }
         while (m >= 1) {
             if (a[m - 1] == '0') {
                 a[m - 1] = '1';
@@ -41,7 +37,7 @@ public:
                 a[m - 1] = '0';
             m--;
         }
-        if (m == 0)
+        if (m <= 0)
             a.insert(a.begin(), '1');
         return a;
     }
